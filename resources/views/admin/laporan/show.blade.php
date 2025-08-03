@@ -75,7 +75,7 @@
                                         <select class="form-control @error('bulan') is-invalid @enderror" 
                                                 name="bulan" 
                                                 id="bulan"
-                                                style="border: 2px solid #e3ebf6; border-radius: 10px; padding: 12px;">
+                                                style="border: 2px solid #e3ebf6; border-radius: 10px; ">
                                             <option value="">-- Pilih Bulan --</option>
                                             @for($i = 1; $i <= 12; $i++)
                                             <option value="{{ $i }}" {{ old('bulan', date('n')) == $i ? 'selected' : '' }}>
@@ -96,7 +96,7 @@
                                         <select class="form-control @error('tahun') is-invalid @enderror" 
                                                 name="tahun" 
                                                 id="tahun"
-                                                style="border: 2px solid #e3ebf6; border-radius: 10px; padding: 12px;">
+                                                style="border: 2px solid #e3ebf6; border-radius: 10px; ">
                                             <option value="">-- Pilih Tahun --</option>
                                             @for($i = date('Y'); $i >= date('Y')-5; $i--)
                                             <option value="{{ $i }}" {{ old('tahun', date('Y')) == $i ? 'selected' : '' }}>
