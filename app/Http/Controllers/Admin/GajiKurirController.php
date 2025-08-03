@@ -113,10 +113,10 @@ class GajiKurirController extends Controller
                     ->with('alert-info', 'danger');
             }
 
-            // Calculate total gaji
+            // Calculate total gaji (BPJS deduction is only applied monthly, not daily)
             $totalPaketBawaan = $request->pikup * $gajiSettings->paket_bawaan;
             $totalPaketJemputan = $request->pud * $gajiSettings->paket_jemputan;
-            $totalGaji = $totalPaketBawaan + $totalPaketJemputan - $gajiSettings->potongan_bpjs;
+            $totalGaji = $totalPaketBawaan + $totalPaketJemputan;
 
             GajiKurir::create([
                 'kurir_id' => $request->kurir_id,
@@ -216,10 +216,10 @@ class GajiKurirController extends Controller
                     ->with('alert-info', 'danger');
             }
 
-            // Calculate total gaji
+            // Calculate total gaji (BPJS deduction is only applied monthly, not daily)
             $totalPaketBawaan = $request->pikup * $gajiSettings->paket_bawaan;
             $totalPaketJemputan = $request->pud * $gajiSettings->paket_jemputan;
-            $totalGaji = $totalPaketBawaan + $totalPaketJemputan - $gajiSettings->potongan_bpjs;
+            $totalGaji = $totalPaketBawaan + $totalPaketJemputan;
 
             $gajiKurir->update([
                 'kurir_id' => $request->kurir_id,

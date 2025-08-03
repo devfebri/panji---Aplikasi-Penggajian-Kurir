@@ -46,14 +46,12 @@ class GajiKurirSeeder extends Seeder
                     'pud' => rand(5, 30),
                     'total' => 0 // Will be calculated by model observer or controller
                 ]);
-            }
-
-            // Update totals after creation
+            }            // Update totals after creation (BPJS deduction is only applied monthly, not daily)
             $gajiKurirs = GajiKurir::all();
             foreach ($gajiKurirs as $gajiKurir) {
                 $totalPaketBawaan = $gajiKurir->pikup * $gajiSettings->paket_bawaan;
                 $totalPaketJemputan = $gajiKurir->pud * $gajiSettings->paket_jemputan;
-                $totalGaji = $totalPaketBawaan + $totalPaketJemputan - $gajiSettings->potongan_bpjs;
+                $totalGaji = $totalPaketBawaan + $totalPaketJemputan;
                 
                 $gajiKurir->update(['total' => $totalGaji]);
             }

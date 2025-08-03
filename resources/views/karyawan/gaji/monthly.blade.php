@@ -41,22 +41,20 @@
         </div>
 
         <!-- Summary Statistics -->
-        <div class="row mb-4">
-            <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">
+        <div class="row mb-4">            <div class="col-lg-3 col-md-6">
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        <h3 style="font-weight: 700; margin: 0;">Rp {{ number_format($monthlyStats['total_gaji_kurir'] + $monthlyStats['total_tradisional'], 0, ',', '.') }}</h3>
-                        <p style="margin: 5px 0 0 0; opacity: 0.9;">Total Gaji</p>
+                        <h3 style="font-weight: 700; margin: 0;">Rp {{ number_format(($monthlyStats['total_gaji_kurir'] + $monthlyStats['total_tradisional']) - ($gajiSettings->potongan_bpjs ?? 0), 0, ',', '.') }}</h3>
+                        <p style="margin: 5px 0 0 0; opacity: 0.9;">Gaji Bersih</p>
+                        <small style="opacity: 0.8; font-size: 0.8rem;">Setelah potongan BPJS</small>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);">
-
+              <div class="col-lg-3 col-md-6">
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);">
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-calendar-day"></i>
@@ -68,8 +66,7 @@
             </div>
             
             <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);">
-
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);">
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-box"></i>
@@ -81,8 +78,7 @@
             </div>
             
             <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(67, 233, 123, 0.3);">
-
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; box-shadow: 0 8px 25px rgba(67, 233, 123, 0.3);">
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-truck"></i>
@@ -266,31 +262,23 @@
                     </div>
                     <div class="card-body" style="padding: 25px;">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div style="background: #f8d7da; padding: 20px; border-radius: 10px; border-left: 4px solid #dc3545;">
+                            <div class="col-md-6">                                <div style="background: #f8d7da; padding: 20px; border-radius: 10px; border-left: 4px solid #dc3545;">
                                     <h5 style="color: #721c24; font-weight: 600; margin-bottom: 15px;">
                                         <i class="fas fa-heart-broken"></i> Potongan BPJS
                                     </h5>
                                     <div class="row">
-                                        <div class="col-6">
-                                            <strong>Per Bulan:</strong>
+                                        <div class="col-8">
+                                            <strong>Potongan Bulanan:</strong>
                                         </div>
-                                        <div class="col-6 text-right">
+                                        <div class="col-4 text-right">
                                             <strong style="color: #dc3545;">
                                                 -Rp {{ number_format($gajiSettings->potongan_bpjs ?? 0, 0, ',', '.') }}
                                             </strong>
                                         </div>
                                     </div>
-                                    <div class="row mt-2">
-                                        <div class="col-6">
-                                            <small class="text-muted">Per Hari Kerja:</small>
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <small class="text-muted">
-                                                ~Rp {{ number_format(($gajiSettings->potongan_bpjs ?? 0) / max($monthlyStats['hari_kerja'], 1), 0, ',', '.') }}
-                                            </small>
-                                        </div>
-                                    </div>
+                                    <small class="text-muted mt-2 d-block">
+                                        <i class="fas fa-info-circle"></i> Dipotong sekali dalam sebulan, bukan per hari kerja
+                                    </small>
                                 </div>
                             </div>
                             <div class="col-md-6">

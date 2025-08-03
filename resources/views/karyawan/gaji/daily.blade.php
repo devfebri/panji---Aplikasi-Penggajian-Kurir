@@ -105,31 +105,11 @@
                                             <strong style="color: #28a745; font-size: 1.2rem;">
                                                 Rp {{ number_format((($dailySalary->pikup * ($gajiSettings->paket_bawaan ?? 0)) + ($dailySalary->pud * ($gajiSettings->paket_jemputan ?? 0))), 0, ',', '.') }}
                                             </strong>
-                                        </td>
-                                    </tr><tr>
-                                        <td style="padding: 15px;">
-                                            <strong><i class="fas fa-heart-broken text-danger"></i> Potongan BPJS</strong>
-                                            <br><small class="text-muted">Rp {{ number_format($gajiSettings->potongan_bpjs ?? 0, 0, ',', '.') }} per bulan (dibagi rata per hari kerja)</small>
-                                        </td>
-                                        <td style="padding: 15px; text-align: center;">
-                                            <span class="badge badge-danger" style="font-size: 1.1rem; padding: 10px 15px;">
-                                                Bulanan
-                                            </span>
-                                        </td>
-                                        <td style="padding: 15px; text-align: right;">
-                                            <small class="text-muted d-block">
-                                                ~Rp {{ number_format(($gajiSettings->potongan_bpjs ?? 0) / 30, 0, ',', '.') }}/hari
-                                            </small>
-                                            <strong style="color: #6c757d; font-size: 1.1rem;">
-                                                (Dipotong bulanan)
-                                            </strong>
-                                        </td>
-                                    </tr>
-                                </tbody>                                <tfoot style="background: #e8f5e8;">
-                                    <tr>
+                                        </td>                                    </tr>
+                                </tbody>
+                                <tfoot style="background: #e8f5e8;">                                    <tr>
                                         <td colspan="2" style="padding: 20px; text-align: right; font-size: 1.3rem;">
                                             <strong style="color: #155724;">TOTAL GAJI HARIAN:</strong>
-                                            <br><small class="text-muted" style="font-weight: normal; font-size: 0.9rem;">*Belum termasuk potongan BPJS bulanan</small>
                                         </td>
                                         <td style="padding: 20px; text-align: right;">
                                             <strong style="color: #155724; font-size: 1.5rem;">
@@ -145,14 +125,16 @@
             </div>
             
             <div class="col-lg-4">                <!-- Summary Card -->
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: rgb(104, 103, 103); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); margin-bottom: 20px;">
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); margin-bottom: 20px;">
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 15px;">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
                         <h2 style="font-weight: 700; margin: 0;">Rp {{ number_format((($dailySalary->pikup * ($gajiSettings->paket_bawaan ?? 0)) + ($dailySalary->pud * ($gajiSettings->paket_jemputan ?? 0))), 0, ',', '.') }}</h2>
                         <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1rem;">Gaji Harian</p>
-                        <small style="opacity: 0.8; font-size: 0.85rem;">*Sebelum potongan BPJS bulanan</small>
+                        <small style="opacity: 0.8; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> Potongan BPJS hanya dipotong bulanan
+                        </small>
                     </div>
                 </div>
                 

@@ -81,18 +81,17 @@
                                         <i class="fas fa-box"></i> Paket Bawaan: 
                                         <br><span style="font-weight: 700; font-size: 1.1rem;">{{ $gajiSettings->formatted_paket_bawaan }}</span>
                                     </p>
-                                </div>
-                                <div class="col-md-4">
+                                </div>                                <div class="col-md-6">
                                     <p style="color: #f57c00; margin: 5px 0; font-weight: 500;">
                                         <i class="fas fa-truck"></i> Paket Jemputan: 
                                         <br><span style="font-weight: 700; font-size: 1.1rem;">{{ $gajiSettings->formatted_paket_jemputan }}</span>
                                     </p>
                                 </div>
-                                <div class="col-md-4">
-                                    <p style="color: #f57c00; margin: 5px 0; font-weight: 500;">
-                                        <i class="fas fa-heart-broken"></i> Potongan BPJS: 
-                                        <br><span style="font-weight: 700; font-size: 1.1rem;">{{ $gajiSettings->formatted_potongan_bpjs }}</span>
-                                    </p>                                </div>
+                            </div>
+                            <div class="alert" style="background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%); border: none; border-radius: 10px; padding: 15px; margin-top: 15px; border-left: 4px solid #4caf50;">
+                                <p style="color: #2e7d32; margin: 0; font-weight: 600; font-size: 0.9rem;">
+                                    <i class="fas fa-info-circle"></i> <strong>Catatan:</strong> Potongan BPJS hanya diterapkan pada perhitungan gaji bulanan, tidak pada gaji harian.
+                                </p>
                             </div>
                         </div>
 
