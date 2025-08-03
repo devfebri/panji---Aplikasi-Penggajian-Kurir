@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
             'nama' => 'admin',
             'email' => 'admin@admin.com',
             'nohp' => '1234',
-            'password' => bcrypt('adminadmin'),
+            'password' => bcrypt('password'),
             'is_admin' => true,
             'nik' => '123',
             'jenis_kelamin' => 'laki-laki',
