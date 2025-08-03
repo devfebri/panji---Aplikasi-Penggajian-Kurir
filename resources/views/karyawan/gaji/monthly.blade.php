@@ -43,7 +43,7 @@
         <!-- Summary Statistics -->
         <div class="row mb-4">
             <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-money-bill-wave"></i>
@@ -55,7 +55,8 @@
             </div>
             
             <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);">
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);">
+
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-calendar-day"></i>
@@ -67,7 +68,8 @@
             </div>
             
             <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);">
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);">
+
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-box"></i>
@@ -79,7 +81,8 @@
             </div>
             
             <div class="col-lg-3 col-md-6">
-                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; box-shadow: 0 8px 25px rgba(67, 233, 123, 0.3);">
+                <div class="card" style="border: none; border-radius: 15px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: rgb(122, 122, 122); box-shadow: 0 8px 25px rgba(67, 233, 123, 0.3);">
+
                     <div class="card-body text-center" style="padding: 25px;">
                         <div style="font-size: 3rem; margin-bottom: 10px;">
                             <i class="fas fa-truck"></i>
